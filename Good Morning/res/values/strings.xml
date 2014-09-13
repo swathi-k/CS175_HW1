@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Hello</string>
+    <string name="action_settings">Settings</string>
+    <string name="Ring">Nose-Ring</string>
+    <string name="Teeth">Teeth</string>
+    <string name="Spike">Spike Hair</string>
+    <string name="wakeup">Just Woke Up</string>
+    <string name="JustSpike">Just Spiked Hair Up</string>
+    <string name="JustRing">Just Put in Nose-Ring</string>
+    <string name="JustTeeth">Just Brushed teeth</string>
+    <string name="UndoSpike">Undo Spiked Hair</string>
+    <string name="UndoRing">Undo Nose-Ring</string>
+    <string name="UndoTeeth">Undo Brushed teeth</string>
+
+</resources>
