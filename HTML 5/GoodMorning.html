@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="Styles.css"/>
+  
+</head>
+<body>
+<div data-role="page">
+
+<div data-role="header">
+<h1>Good Morning</h1>
+</div><!-- /header -->
+
+<div data-role="content">
+<p id="labelcap">Just Woke Up!</p>
+<div class="images">
+<img id="person_head" src="Images/wakeup.png">
+</div>
+
+<div data-role="controlgroup" data-type="horizontal">
+  <a href="#" id="spike" class="ui-btn">Spike</a>
+  <a href="#" id="ring" class="ui-btn">Ring</a>
+  <a href="#" id="teeth" class="ui-btn">Teeth</a>
+</div>
+
+</div>
+</div>
+<script>
+	var spikeClicked = 0;
+	var ringClicked = 0;
+	var teethClicked = 0;
+
+	$('#spike').on({
+	    'click': function(){
+	        $('#labelcap').text(countClicks('spike'));
+	        $('#person_head').attr('src',getImgSource());
+	    }
+	});
+
+	$('#ring').on({
+	    'click': function(){
+	        $('#labelcap').text(countClicks('ring'));
+	        $('#person_head').attr('src',getImgSource());
+	    }
+	});
+
+	$('#teeth').on({
+	    'click': function(){
+	        $('#labelcap').text(countClicks('teeth'));
+	        $('#person_head').attr('src',getImgSource());
+	    }
+	});
+
+	
+	function countClicks(button){
+	    if(button == "spike")
+	    {
+	    	spikeClicked=!spikeClicked;
+	    	if(spikeClicked)
+	    		return 'Just Spiked Hair';
+	    	else
+	    		return 'Just Undid Hair';
+	    }
+	    else if(button == "ring")
+	    {
+	    	ringClicked=!ringClicked;
+	    	if(ringClicked)
+	    		return 'Just Put in Nose-Ring';
+	    	else
+	    		return 'Just Took out Nose-Ring';
+	    }
+	    else
+	    {
+	    	teethClicked=!teethClicked;
+	    	if(teethClicked)
+	    		return 'Just Brushed Teeth';
+	    	else
+	    		return 'Just Undid Teethbrushing';
+	    }
+	};	
+	
+	function getImgSource(){
+		if(spikeClicked && ringClicked && teethClicked)
+			return 'Images/spikeringteeth.png';
+		else if(spikeClicked && ringClicked && !teethClicked)
+			return 'Images/spikering.png';
+		else if(spikeClicked && !ringClicked && teethClicked)
+			return 'Images/spiketeeth.png';
+		else if(!spikeClicked && ringClicked && teethClicked)
+			return 'Images/ringteeth.png';
+		else if(spikeClicked && !ringClicked && !teethClicked)
+			return 'Images/spike.png';
+		else if(!spikeClicked && ringClicked && !teethClicked)
+			return 'Images/ring.png';
+		else if(!spikeClicked && !ringClicked && teethClicked)
+			return 'Images/teeth.png';
+		else 
+			return 'Images/wakeup.png';
+	};
+	
+</script>
+
+</body>
+</html>
